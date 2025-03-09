@@ -1,7 +1,9 @@
 mat-card {
-  max-width: 600px;
+  max-width: 620px; 
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 1.2rem;
+  border-radius: 8px; 
+  color: black;
 
   form {
     display: flex;
@@ -12,5 +14,7 @@ mat-card {
   .actions {
     display: flex;
     gap: 1rem;
+    justify-content: space-between; 
   }
 }
+

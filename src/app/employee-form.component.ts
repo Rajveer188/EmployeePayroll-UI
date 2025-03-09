@@ -63,7 +63,6 @@ export class EmployeeFormComponent implements OnInit {
   loadEmployeeData(id: number): void {
     this.employeeService.getEmployeeById(id).subscribe({
       next: (emp: Employee) => {
-        // Convert backend date (dd-MM-yyyy) to yyyy-MM-dd for the date input
         const [day, month, year] = emp.startDate.split('-');
         const formattedDate = `${year}-${month}-${day}`;
         
@@ -110,9 +109,5 @@ export class EmployeeFormComponent implements OnInit {
       salary: Number(rawData.salary),
       startDate: `${day}-${month}-${year}`
     };
-  }
-
-  onCancel(): void {
-    this.router.navigate(['/employees']);
   }
 }

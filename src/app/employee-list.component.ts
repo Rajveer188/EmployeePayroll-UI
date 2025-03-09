@@ -7,17 +7,19 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatButtonModule, MatCardModule],
+  imports: [CommonModule, MatTableModule, MatButtonModule, MatCardModule, RouterModule],
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
   displayedColumns: string[] = [
+    "id",
     'name',
     'gender',
     'department',
@@ -42,9 +44,9 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
-  onAddUser(): void {
-    this.router.navigate(['/add-employee']);
-  }
+  // onAddUser(): void {
+  //   this.router.navigate(['/add-employee']);
+  // }
 
   onEditUser(id?: number): void {
     if (!id) return;

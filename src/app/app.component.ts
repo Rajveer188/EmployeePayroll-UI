@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common'; 
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,10 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule, 
     RouterOutlet,
-    MatToolbarModule
+    MatToolbarModule,
+    RouterModule
   ],
-  template: `
-    <mat-toolbar color="primary">
-      <span>Employee Payroll App</span>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {}
